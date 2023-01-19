@@ -1,28 +1,42 @@
 import React from 'react'
 import '../styles/App.css';
 import { QuestionsContext } from './QuestionsContext';
+import { useState } from 'react';
 
-const AddQuestion = () => {
-    const [questionText, setQuestionText] = useState('');
-    const { addQuestion } = useContext(QuestionsContext);
+const AddQuestion = () => {   
+    // const { addQuestion } = useContext(QuestionsContext);
+    const [question, setQuestion] = useState("");
+
+    const handleChange = (e) => {
+        setQuestion(e.target.value);
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
-        const newQuestion = { id: Date.now(), text: questionText, answer: "" };
-        addQuestion(newQuestion);
-    };
+        
+        let questions = JSON.parse(localStorage.getItem("questions")) || []
+
+        let newQuestion = {
+            id: questions.length + 1,
+            text: question
+        }
+        // Store the question in local storage
+        localStorage.setItem("questions", JSON.stringify([...questions, newQuestion]));
+
+
+        // Clear the input field
+        setQuestion("");
+    }
+
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type='text'
-                placeholder='Question text'
-                value={questionText}
-                onChange={e => setQuestionText(e.target.value)}
-            />
-            <button
-                type='submit'>Add Question</button>
-        </form>
+       
+        <div className='linkpage'>
+            <form>
+                <input type="text" value={question} onChange={handleChange} placeholder="Enter a question" />
+                <button type="submit" onClick={handleSubmit}>Add Question</button>
+            </form>
+        </div>
 
     )
 }

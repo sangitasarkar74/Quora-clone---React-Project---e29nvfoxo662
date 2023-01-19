@@ -1,43 +1,58 @@
-import React from 'react';
+
 import Header from './Header';
 // import { Route } from 'react-router-dom';
 import Search from './Search';
 import AddAnswer from './AddAnswer';
 import { useContext } from 'react';
 import { QuestionsContext } from './QuestionsContext';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const MainPage = () => {
-    // const [questions, setQuestions] = useState([]);
-    const { questions } = useContext(QuestionsContext);
-    const [search, setSearch] = useState('');
+    const [questions, setQuestions] = useState([]);
+    // const [result, setResult] = useState([]);
 
-    // useEffect(() => {
-    //     // Fetch list of questions and answers here
-    // }, []);
+    useEffect(() => {
+        setQuestions(JSON.parse(localStorage.getItem("questions")) || []);
+    }, []);
 
-    const filteredQuestions = questions.filter(question =>
-        question.text.toLowerCase().includes(search.toLowerCase())
-    );
 
     return (
         <div className='mainPage'>
-            <input
-                type='text'
-                placeholder='Search'
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-            />
-            <ul>
-                {filteredQuestions.map(question => (
-                    <li key={question.id}>
-                        <h2>{question.text}</h2>
-                        <p>{question.answer}</p>
-                    </li>
-                ))}
-            </ul>
 
-            Homepage
+            <div className='questionAnswerCard'>
+
+                {questions.map(q => (
+                    <div key={q.id} className="card">
+                        <h3>{q.text}</h3>
+                        <ul>
+                            {q.answers && q.answers.map((a, index) => (
+                                <li key={index}>{a}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
+            <div className='questionPage'>
+                {questions.map((question) => (
+                    <div key={question.id}>
+                        <h3>{question.text}</h3>
+                    </div>
+                ))}
+
+            </div>
+            {/* {result.length !== 0 &&
+                result.map((item, index) => (
+                    <div key={index}>
+                        <h3>{item.question}</h3>
+                        <ul>
+                            {item.answers.map((a, index) => (
+                                <li key={index}>{a}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))} */}
+
+
         </div>
     )
 }

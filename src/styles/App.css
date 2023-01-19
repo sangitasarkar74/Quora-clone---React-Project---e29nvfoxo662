@@ -27,11 +27,25 @@ button {
 
 .mainPage {
     border: 1px solid black;
-    background-color: rgb(206, 201, 201);
-    margin: auto;
     margin-top: 50px;
     width: 70%;
-    /* border-radius: 12px; */
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    padding: 40px;
+
+}
+
+.questionAnswerCard {
+    background-color: blue;
+    width: 45%;
+    padding: 20px;
+}
+
+.questionPage {
+    background-color: blue;
+    width: 45%;
+    padding: 20px;
 }
 
 #searchResult {
@@ -76,5 +90,22 @@ button {
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    text-decoration: none;
+}
+
+.routes {
+    text-align: center;
+
+}
+
+.linkpage {
+    margin: 60px;
+    background-color: rgb(188, 190, 192);
+    width: 40%;
+    margin: auto;
+    margin-top: 60px;
+    padding: 30px;
+}
+
+.linkpage input {
+    margin-right: 0px;
 }

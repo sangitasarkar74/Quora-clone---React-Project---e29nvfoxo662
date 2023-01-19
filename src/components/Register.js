@@ -1,33 +1,29 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
-const Login = () => {
+
+const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // check if the username and password match a user in the database
-        // if (username === 'admin' && password === 'password') {
-        //     localStorage.setItem('loggedIn', true);
-        //     window.location.href = '/';
-        // } else {
-        //     setError('Invalid username or password');
-        // }
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const user = users.find(user => user.username === username && user.password === password);
-        if (user) {
-            localStorage.setItem('loggedIn', true);
-            window.location.href = '/';
+        // check if the password and confirm password match
+        if (password !== confirmPassword) {
+            setError('Passwords do not match');
         } else {
-            setError('Invalid username or password');
+            // register the user in the database            
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push({ username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            window.location.href = '/';
         }
     }
 
     return (
         <div className='linkpage'>
-            <div className="login-page">
+            <div className="register-page">
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
@@ -41,13 +37,23 @@ const Login = () => {
                         onChange={e => setPassword(e.target.value)}
                         placeholder="Password"
                     />
-                    <button type="submit">Login</button>
+                    <input
+                        type="password"
+                        value={confirmPassword}
+                        onChange={e =>
+                            setConfirmPassword(e.target.value)}
+                        placeholder="Confirm Password"
+                    />
+                    <button type="submit">Register</button>
                     {error && <p className="error">{error}</p>}
                 </form>
-                <Link to='/register'>Not a member? Register here</Link>
             </div>
         </div>
     );
 }
 
-export default Login;
+export default Register;
+
+
+
+
