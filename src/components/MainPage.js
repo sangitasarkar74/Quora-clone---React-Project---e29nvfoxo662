@@ -4,7 +4,7 @@ import Header from './Header';
 import Search from './Search';
 import AddAnswer from './AddAnswer';
 import { useContext } from 'react';
-import { QuestionsContext } from './QuestionsContext';
+
 import React, { useEffect, useState } from 'react';
 
 const MainPage = () => {
@@ -22,11 +22,14 @@ const MainPage = () => {
             <div className='questionAnswerCard'>
 
                 {questions.map(q => (
+
                     <div key={q.id} className="card">
-                        <h3>{q.text}</h3>
+                        <ul>
+                            <li>{q.text}</li>
+                        </ul>
                         <ul>
                             {q.answers && q.answers.map((a, index) => (
-                                <li key={index}>{a}</li>
+                                <p key={index}>{a}</p>
                             ))}
                         </ul>
                     </div>
@@ -35,7 +38,9 @@ const MainPage = () => {
             <div className='questionPage'>
                 {questions.map((question) => (
                     <div key={question.id}>
-                        <h3>{question.text}</h3>
+                        <ul>
+                            <li>{question.text}</li>
+                        </ul>
                     </div>
                 ))}
 

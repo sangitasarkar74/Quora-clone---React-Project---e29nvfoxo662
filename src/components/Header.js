@@ -17,6 +17,9 @@ const Header = () => {
         <div id='header'>
             <Search questions={questions} setResult={setResult} result={result} />
             <ul className='nav-links'>
+                <Link to="/DisplayPage">
+                    <button>Search</button>
+                </Link>
                 <Link to="/">
                     <li>Home</li>
                 </Link>

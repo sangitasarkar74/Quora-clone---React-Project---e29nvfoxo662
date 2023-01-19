@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
 import { useParams } from 'react-router-dom';
-import { QuestionsContext } from './QuestionsContext';
 import { useState } from 'react';
 
 const AddAnswer = () => {
@@ -40,7 +39,7 @@ const AddAnswer = () => {
 
     return (
         <div className='linkpage'>
-            <form>
+            <form className='addAnswer'>
                 <label>
                     Select a question:
                     <select value={questionId} onChange={handleQuestionChange}>
@@ -56,7 +55,10 @@ const AddAnswer = () => {
                     <input type="text" value={answer} onChange={handleAnswerChange} placeholder="Enter an answer" />
                 </label>
                 <br />
-                <button type="submit" onClick={handleSubmit}>Add Answer</button>
+                <div id='buttoncontainer'>
+                    <button type="submit" onClick={handleSubmit}>Add Answer</button>
+                    <button type="submit" >Cancel</button>
+                </div>
             </form>
         </div>
     )

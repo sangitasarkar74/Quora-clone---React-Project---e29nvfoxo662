@@ -29,22 +29,28 @@ const Login = () => {
         <div className='linkpage'>
             <div className="login-page">
                 <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={e => setUsername(e.target.value)}
-                        placeholder="Username"
-                    />
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                        placeholder="Password"
-                    />
+                    <div>
+                        <input
+                            type="text"
+                            value={username}
+                            onChange={e => setUsername(e.target.value)}
+                            placeholder="Username"
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                            placeholder="Password"
+                        />
+                    </div>
                     <button type="submit">Login</button>
                     {error && <p className="error">{error}</p>}
                 </form>
-                <Link to='/register'>Not a member? Register here</Link>
+                <div id='register'>
+                    <Link to='/register'>Not a member? Register here</Link>
+                </div>
             </div>
         </div>
     );

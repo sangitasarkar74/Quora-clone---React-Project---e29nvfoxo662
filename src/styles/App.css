@@ -10,6 +10,7 @@ button {
     color: white;
     border: none;
     border-radius: 10px;
+    margin: 20px;
 }
 
 #header {
@@ -20,14 +21,17 @@ button {
     margin-top: 50px;
     width: 90%;
     height: 50px;
+    margin-bottom: 50px;
+
     /* border: 1px solid black;
     margin: auto;
     margin-top: 50px; */
 }
 
 .mainPage {
-    border: 1px solid black;
-    margin-top: 50px;
+
+    background-color: gray;
+    margin-top: 60px;
     width: 70%;
     display: flex;
     margin: auto;
@@ -37,24 +41,27 @@ button {
 }
 
 .questionAnswerCard {
-    background-color: blue;
-    width: 45%;
+    background-color: white;
+    width: 42%;
     padding: 20px;
+    text-align: left;
 }
 
 .questionPage {
-    background-color: blue;
-    width: 45%;
+    background-color: white;
+    width: 42%;
     padding: 20px;
+    text-align: left;
 }
 
 #searchResult {
     background-color: white;
     width: 400px;
     height: 500px;
+
     /* margin-top: 50px;
     margin-left: 40px; */
-    margin: 50px;
+    /* margin: 50px; */
 }
 
 #questions {
@@ -70,6 +77,7 @@ button {
     display: flex;
 }
 
+
 #search_button {
     margin-left: 30px;
 }
@@ -80,9 +88,9 @@ button {
     border-radius: 10px;
     background-color: white;
     border: 1px solid rgb(70, 67, 67);
+    margin: auto;
+    margin-left: 30px;
 }
-
-
 
 .nav-links {
     width: 40%;
@@ -90,6 +98,9 @@ button {
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    font-size: 15px;
+    font-family: sans-serif;
+
 }
 
 .routes {
@@ -100,12 +111,72 @@ button {
 .linkpage {
     margin: 60px;
     background-color: rgb(188, 190, 192);
-    width: 40%;
+    width: 50%;
     margin: auto;
     margin-top: 60px;
-    padding: 30px;
+    /* padding-top: 20px; */
+    text-align: right;
+}
+
+/* 
+.linkpage form {
+    margin-right: 150px;
+} */
+
+.linkpage select {
+    height: 25px;
 }
 
 .linkpage input {
+    margin-top: 20px;
+    height: 25px;
+    width: 200px;
+
+}
+
+.inputs {
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.addquestion {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 8px;
+    align-items: center;
+}
+
+.addAnswer {
+    margin-right: 180px;
+    padding-top: 30px;
+}
+
+.addAnswer button {
     margin-right: 0px;
+}
+
+#buttoncontainer {
+    display: flex;
+    justify-content: right;
+
+}
+
+.login-page {
+    padding: 0px;
+    margin-right: 220px;
+}
+
+#register {
+
+    padding-bottom: 30px;
+    margin-right: 10px;
+}
+
+.login-page button {
+    margin-right: 0px;
+}
+
+.register-page {
+    margin-right: 150px;
 }

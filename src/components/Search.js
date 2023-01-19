@@ -5,13 +5,13 @@ function Search({ questions, setResult, result }) {
     const [query, setQuery] = useState('');
     // const [result, setResult] = useState([]);
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const searchedData = questions.filter(item => item.questions.toLowerCase().includes(query.toLowerCase()));
-    //     setResult(searchedData);
-    //     console.log(searchedData)
-    //     console.log(e)
-    // }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const searchedData = questions.filter(item => item.questions.toLowerCase().includes(query.toLowerCase()));
+        setResult(searchedData);
+        console.log(searchedData)
+        console.log(e)
+    }
 
     const onChangeHandle = (e) => {
         setQuery(e.target.value)
@@ -27,14 +27,14 @@ function Search({ questions, setResult, result }) {
     }
     return (
         <div id="mainpage">
-            {/* <form id="form" onSubmit={handleSubmit}> */}
-            <input
-                type="text"
-                id='search'
-                value={query}
-                onChange={onChangeHandle}
-            />
-            {/* <button id='search_button' type="submit">Search</button>
+            <form id="form" onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    id='search'
+                    value={query}
+                    onChange={onChangeHandle}
+                />
+                <button id='search_button' type="submit">Search</button>
             </form>
             {console.log(result)}
             <ul>
@@ -49,7 +49,7 @@ function Search({ questions, setResult, result }) {
                             </ul>
                         </div>
                     ))}
-            </ul> */}
+            </ul>
             {/* <ul>
                 {(result.query === '' ? "" : result.list.map(post => {
                     return <li key={post.question}>{post.question}</li>

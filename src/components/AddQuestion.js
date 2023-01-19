@@ -1,9 +1,8 @@
 import React from 'react'
 import '../styles/App.css';
-import { QuestionsContext } from './QuestionsContext';
 import { useState } from 'react';
 
-const AddQuestion = () => {   
+const AddQuestion = () => {
     // const { addQuestion } = useContext(QuestionsContext);
     const [question, setQuestion] = useState("");
 
@@ -13,7 +12,7 @@ const AddQuestion = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        
+
         let questions = JSON.parse(localStorage.getItem("questions")) || []
 
         let newQuestion = {
@@ -30,11 +29,16 @@ const AddQuestion = () => {
 
 
     return (
-       
+
         <div className='linkpage'>
-            <form>
-                <input type="text" value={question} onChange={handleChange} placeholder="Enter a question" />
+            <form className='addquestion'>
+                <label>
+                    Enter a question:
+                </label>
+                <input className='inputs' type="text" value={question} onChange={handleChange} placeholder="Enter a question" />
+
                 <button type="submit" onClick={handleSubmit}>Add Question</button>
+                <button type="submit" >Cancel</button>
             </form>
         </div>
 
