@@ -28,17 +28,19 @@ const MainPage = ({ query }) => {
               <ul>
                 <li>{q.text}</li>
               </ul>
-              <ul>
-                {q.answers &&
-                  q.answers.map((a, index) => <p key={index}>{a}</p>)}
-              </ul>
+              <p>
+                <ul>
+                  {q.answers &&
+                    q.answers.map((a, index) => <p key={index}>{a}</p>)}
+                </ul>
+              </p>
             </div>
           );
         })}
       </div>
       <div className="questionPage">
         {questions.map((question) => (
-          <div key={question.id}>
+          <div key={question.id} className="question-card">
             <ul>
               <li>{question.text}</li>
             </ul>

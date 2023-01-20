@@ -118,11 +118,6 @@ button {
     text-align: right;
 }
 
-/* 
-.linkpage form {
-    margin-right: 150px;
-} */
-
 .linkpage select {
     height: 25px;
 }
@@ -179,4 +174,14 @@ button {
 
 .register-page {
     margin-right: 150px;
+}
+
+.card{
+    margin-bottom: 20px;
+}
+.question-card{
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: rgb(122, 34, 118);
+    font-weight: 600;
 }
