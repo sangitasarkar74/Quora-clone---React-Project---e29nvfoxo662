@@ -10,7 +10,12 @@ function Search({ query, setQuery }) {
   return (
     <div id="mainpage">
       <Link to="/">
-        <input type="text" id="search" onChange={onChangeHandle} />
+        <input
+          type="text"
+          id="search"
+          onChange={onChangeHandle}
+          placeholder="Enter your question here"
+        />
       </Link>
       {/* <Link to="/">Search</Link> */}
     </div>

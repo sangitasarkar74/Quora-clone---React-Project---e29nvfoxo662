@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    /* background-color: rgb(151, 148, 148); */
+    margin: 0;   
+   
 }
 
 button {
@@ -22,10 +22,11 @@ button {
     width: 70%;
     height: 50px;
     margin-bottom: 50px;
-
-    /* border: 1px solid black;
-    margin: auto;
-    margin-top: 50px; */
+}
+#header img{
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
 }
 
 .mainPage {
@@ -58,25 +59,18 @@ button {
     background-color: white;
     width: 400px;
     height: 500px;
-
-    /* margin-top: 50px;
-    margin-left: 40px; */
-    /* margin: 50px; */
 }
 
 #questions {
     background-color: white;
     width: 400px;
-    height: 500px;
-    /* margin-top: 50px;
-    margin-left: 40px; */
+    height: 500px;   
     margin: 50px;
 }
 
 .container {
     display: flex;
 }
-
 
 #search_button {
     margin-left: 30px;
@@ -90,8 +84,9 @@ button {
     border: 1px solid rgb(155, 149, 149);
     margin: auto;
     margin-left: 30px;
+    padding-left: 20px; 
+    
 }
-
 .nav-links {
     width: 40%;
     display: flex;
@@ -100,7 +95,6 @@ button {
     list-style: none;
     font-size: 15px;
     font-family: sans-serif;
-
 }
 
 .routes {
