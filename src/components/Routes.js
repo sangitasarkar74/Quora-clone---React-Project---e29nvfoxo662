@@ -19,19 +19,16 @@ const Routes = () => {
           <Route
             path="/"
             exact
-            render={(props) => (
-              <MainPage {...props} query={query} setQuery={setQuery} />
-            )}
+            render={(props) => <MainPage {...props} query={query} />}
           />
+      
           <Route path="/AddQuestion" component={AddQuestion} />
           <Route path="/AddAnswer" component={AddAnswer} />
           <Route path="/Login" component={Login} />
           <Route path="/Register" component={Register} />
         </Switch>
       </div>
-      
     </Router>
-    
   );
 };
 export default Routes;

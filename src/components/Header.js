@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Search from "./Search";
 import { Link } from "react-router-dom";
 import MainPage from "./MainPage";
-import DisplayPage from "./DisplayPage";
 
 const Header = ({ query, setQuery }) => {
   return (

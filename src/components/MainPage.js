@@ -9,29 +9,32 @@ const MainPage = ({ query }) => {
   useEffect(() => {
     setQuestions(JSON.parse(localStorage.getItem("questions")) || []);
   }, []);
-
-  console.log(localStorage.getItem("questions"));
-  console.log(",,,,", query);
-  console.log("questions in setQuestions:", questions);
-
-  // const filteredQuestions = questions.filter((question) => {
-  //   return question.text.toLowerCase().includes(query.toLowerCase());
-  // });
-  // console.log("questions in setQuestions:", questions);
+  console.log("'''", query);
+  let questionsToDisplay = questions;
+  if (query.trim() !== "") {
+    questionsToDisplay = questions.filter((item) =>
+      item.text.toLowerCase().includes(query.toLowerCase())
+    );
+  }
 
   return (
     <div className="mainPage">
       <div className="questionAnswerCard">
-        {questions.map((q) => (
-          <div key={q.id} className="card">
-            <ul>
-              <li>{q.text}</li>
-            </ul>
-            <ul>
-              {q.answers && q.answers.map((a, index) => <p key={index}>{a}</p>)}
-            </ul>
-          </div>
-        ))}
+        {questionsToDisplay.map((q) => {
+          console.log("query", query);
+          console.log("Filtered item: ", q);
+          return (
+            <div key={q.id} className="card">
+              <ul>
+                <li>{q.text}</li>
+              </ul>
+              <ul>
+                {q.answers &&
+                  q.answers.map((a, index) => <p key={index}>{a}</p>)}
+              </ul>
+            </div>
+          );
+        })}
       </div>
       <div className="questionPage">
         {questions.map((question) => (

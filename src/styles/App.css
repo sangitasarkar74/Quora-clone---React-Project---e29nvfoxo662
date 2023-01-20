@@ -19,7 +19,7 @@ button {
     margin: auto;
     align-items: center;
     margin-top: 50px;
-    width: 90%;
+    width: 70%;
     height: 50px;
     margin-bottom: 50px;
 
@@ -87,7 +87,7 @@ button {
     height: 30px;
     border-radius: 10px;
     background-color: white;
-    border: 1px solid rgb(70, 67, 67);
+    border: 1px solid rgb(155, 149, 149);
     margin: auto;
     margin-left: 30px;
 }

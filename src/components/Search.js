@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/App.css";
+import { Link } from "react-router-dom";
 
 function Search({ query, setQuery }) {
   const onChangeHandle = (e) => {
@@ -8,7 +9,10 @@ function Search({ query, setQuery }) {
   };
   return (
     <div id="mainpage">
-      <input type="text" id="search" onChange={onChangeHandle} />
+      <Link to="/">
+        <input type="text" id="search" onChange={onChangeHandle} />
+      </Link>
+      {/* <Link to="/">Search</Link> */}
     </div>
   );
 }
