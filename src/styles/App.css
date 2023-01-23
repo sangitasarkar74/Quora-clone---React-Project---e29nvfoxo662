@@ -24,7 +24,7 @@ button {
     margin-bottom: 50px;
 }
 #header img{
-    width: 100px;
+    width: 10%;
     height: auto;
     margin-left: 20px;
 }
@@ -77,13 +77,13 @@ button {
 }
 
 #search {
-    width: 300px;
+    width: 90%;
     height: 30px;
     border-radius: 10px;
     background-color: white;
     border: 1px solid rgb(155, 149, 149);
     margin: auto;
-    margin-left: 30px;
+    margin-left: 20px;
     padding-left: 20px; 
     
 }
@@ -178,4 +178,37 @@ button {
     font-size: 18px;
     color: rgb(122, 34, 118);
     font-weight: 600;
+}
+
+@media only screen and (max-width:700px)  {
+    .nav-links {
+        width: 40%;    
+        list-style: none;
+        font-size: 8px;
+        padding-left: 0px;
+        
+    }
+    #header {        
+        margin: auto;
+        align-items: center;
+        margin-top: 20px;
+        width: 90%;
+        height: 20px;
+        margin-bottom: 20px;
+        
+    }
+    #search {
+        width: 70%;
+        height: 20px;
+        border-radius: 10px;
+        background-color: white;
+        border: 1px solid rgb(155, 149, 149);
+        margin: auto;
+        margin-left: 0px;
+        padding-left: 10px; 
+        
+    }
+
+
+    
 }
