@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/App.css";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const AddAnswer = () => {
   const [answerText, setAnswerText] = useState("");
@@ -17,6 +18,12 @@ const AddAnswer = () => {
 
   const handleAnswerChange = (e) => {
     setAnswer(e.target.value);
+  };
+
+  const history = useHistory();
+
+  const handleCancel = () => {
+    history.push("/");
   };
 
   const handleSubmit = (e) => {
@@ -68,7 +75,9 @@ const AddAnswer = () => {
           <button type="submit" onClick={handleSubmit}>
             Add Answer
           </button>
-          <button type="submit">Cancel</button>
+          <button type="submit" onClick={handleCancel}>
+            Cancel
+          </button>
         </div>
       </form>
     </div>

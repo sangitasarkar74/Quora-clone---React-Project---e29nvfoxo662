@@ -1,12 +1,19 @@
 import React from "react";
 import "../styles/App.css";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const AddQuestion = () => {
   const [question, setQuestion] = useState("");
 
   const handleChange = (e) => {
     setQuestion(e.target.value);
+  };
+
+  const history = useHistory();
+
+  const handleCancel = () => {
+    history.push("/");
   };
 
   const handleSubmit = (e) => {
@@ -43,7 +50,9 @@ const AddQuestion = () => {
         <button type="submit" onClick={handleSubmit}>
           Add Question
         </button>
-        <button type="submit">Cancel</button>
+        <button type="submit" onClick={handleCancel}>
+          Cancel
+        </button>
       </form>
     </div>
   );
