@@ -80,12 +80,22 @@ button {
     width: 90%;
     height: 30px;
     border-radius: 10px;
-    background-color: white;
-    border: 1px solid rgb(155, 149, 149);
+    background-color:transparent;
+    border: none;
     margin: auto;
+    outline: none;
     margin-left: 20px;
     padding-left: 20px; 
     
+}
+.search-input{
+    display: flex;
+    align-items: center;
+    width:40% ;
+    border: 1px solid grey;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-left: 15px;
 }
 .nav-links {
     width: 40%;
