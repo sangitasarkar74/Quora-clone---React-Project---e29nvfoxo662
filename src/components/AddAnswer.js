@@ -42,6 +42,7 @@ const AddAnswer = () => {
     // Clear the input fields
     setQuestionId("");
     setAnswer("");
+    history.push("/");
   };
 
   return (

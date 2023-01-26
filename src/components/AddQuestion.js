@@ -33,6 +33,7 @@ const AddQuestion = () => {
 
     // Clear the input field
     setQuestion("");
+    history.push("/");
   };
 
   return (
