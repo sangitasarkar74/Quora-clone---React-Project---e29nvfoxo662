@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,10 +18,16 @@ const Login = () => {
     );
     if (user) {
       localStorage.setItem("loggedIn", true);
-      window.location.href = "/";
+      //   window.location.href = "/";
+      history.push("/");
     } else {
       setError("Invalid username or password");
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedIn");
+    setIsLoggedIn(false);
   };
 
   return (
@@ -44,6 +53,7 @@ const Login = () => {
           <button type="submit">Login</button>
           {error && <p className="error">{error}</p>}
         </form>
+
         <div id="register">
           <Link to="/register">Not a member? Register here</Link>
         </div>
