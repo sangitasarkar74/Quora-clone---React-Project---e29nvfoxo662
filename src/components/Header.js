@@ -5,6 +5,7 @@ import MainPage from "./MainPage";
 import Img from "./logo-quora.png";
 import SearchIcon from "@material-ui/icons/Search";
 import Hamburger from "./Hamburger";
+import { Avatar } from "@material-ui/core";
 
 const Header = ({ query, setQuery }) => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -40,26 +41,29 @@ const Header = ({ query, setQuery }) => {
       <ul className="nav-links">
         {isLoggedIn ? (
           <>
-            <Link to="/">
+            <Link to="/" className="links">
               <li>Home</li>
             </Link>
-            <Link to="/AddQuestion">
+            <Link to="/AddQuestion" className="links">
               <li>Add Question</li>
             </Link>
-            <Link to="/AddAnswer">
+            <Link to="/AddAnswer" className="links">
               <li>Add Answer</li>
             </Link>
-            <Link onClick={logOut}>
+            <Link className="links" onClick={logOut}>
               <li>Logout</li>
             </Link>
             <div>Welcome {user[0].username}!</div>
+            <Avatar />
           </>
         ) : (
           <>
-            <Link to="/Login">
+            <Link to="/Login" className="links">
               <li>Login</li>
             </Link>
-            <Link to="/register">Not a member? Register here</Link>
+            <Link to="/register" className="links">
+              <li>Not a member? Register here</li>
+            </Link>
           </>
         )}
       </ul>

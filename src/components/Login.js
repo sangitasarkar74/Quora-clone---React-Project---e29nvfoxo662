@@ -50,7 +50,9 @@ const Login = () => {
         </form>
 
         <div id="register">
-          <Link to="/register">Not a member? Register here</Link>
+          <Link to="/register" className="links">
+            Not a member? Register here
+          </Link>
         </div>
       </div>
     </div>

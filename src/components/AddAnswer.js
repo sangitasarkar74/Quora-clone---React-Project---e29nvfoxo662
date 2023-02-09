@@ -6,9 +6,9 @@ import { useHistory } from "react-router-dom";
 
 const AddAnswer = () => {
   const [answerText, setAnswerText] = useState("");
-  // const { addAnswer } = useContext(QuestionsContext);
   const [questionId, setQuestionId] = useState("");
   const [answer, setAnswer] = useState("");
+  const [message, setMessage] = useState("");
 
   const questions = JSON.parse(localStorage.getItem("questions") || "[]");
 
@@ -37,14 +37,22 @@ const AddAnswer = () => {
     selectedQuestion.answers.push(answer);
 
     localStorage.setItem("questions", JSON.stringify(questions));
-
+    setMessage("Answer added successfully! ");
     setQuestionId("");
     setAnswer("");
-    history.push("/");
+    // history.push("/");
   };
 
   return (
     <div className="linkpage">
+      {message && (
+        <div className="message">
+          {message}
+          <a href="#" onClick={() => history.push("/")}>
+            Check your answer here..
+          </a>
+        </div>
+      )}
       <form className="addAnswer">
         <label>
           Select a question:
@@ -62,7 +70,7 @@ const AddAnswer = () => {
         <br />
         <label>
           Enter an answer:
-          <input
+          <input className="answerinput"
             type="text"
             value={answer}
             onChange={handleAnswerChange}

@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const AddQuestion = () => {
   const [question, setQuestion] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
     setQuestion(e.target.value);
@@ -30,16 +31,24 @@ const AddQuestion = () => {
       "questions",
       JSON.stringify([...questions, newQuestion])
     );
-
-    // Clear the input field
+    setMessage("Question added successfully! ");
+    console.log("setmessage", setMessage);
     setQuestion("");
-    history.push("/");
+    // history.push("/");
   };
 
   return (
     <div className="linkpage">
+      {message && (
+        <div className="message">
+          {message}
+          <a href="#" onClick={() => history.push("/")}>
+            Check your question here..
+          </a>
+        </div>
+      )}
       <form className="addquestion">
-        <label>Enter a question:</label>
+        <label>Enter a question: </label>
         <input
           className="inputs"
           type="text"
