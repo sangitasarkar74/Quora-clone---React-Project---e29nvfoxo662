@@ -21,8 +21,8 @@ const MainPage = ({ query }) => {
     <div className="mainPage">
       <div className="questionAnswerCard">
         {questionsToDisplay.map((q) => {
-          console.log("query", query);
-          console.log("Filtered item: ", q);
+          // console.log("query", query);
+          // console.log("Filtered item: ", q);
           return (
             <div key={q.id} className="card">
               <ul>

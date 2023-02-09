@@ -47,13 +47,14 @@ const AddQuestion = () => {
           onChange={handleChange}
           placeholder="Enter a question"
         />
-
-        <button type="submit" onClick={handleSubmit}>
-          Add Question
-        </button>
-        <button type="submit" onClick={handleCancel}>
-          Cancel
-        </button>
+        <div className="question-container">
+          <button type="submit" onClick={handleSubmit}>
+            Add Question
+          </button>
+          <button type="submit" onClick={handleCancel}>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

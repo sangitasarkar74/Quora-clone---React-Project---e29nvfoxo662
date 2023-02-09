@@ -4,8 +4,15 @@ import { Link, useHistory } from "react-router-dom";
 import MainPage from "./MainPage";
 import Img from "./logo-quora.png";
 import SearchIcon from "@material-ui/icons/Search";
+import Hamburger from "./Hamburger";
 
 const Header = ({ query, setQuery }) => {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen);
+  };
+
   let user = JSON.parse(localStorage.getItem("users"));
   console.log(user);
 
@@ -27,6 +34,9 @@ const Header = ({ query, setQuery }) => {
         <SearchIcon />
         <Search setQuery={setQuery} query={query} />
       </div>
+      <div className="hamburger" onClick={toggleHamburger}>
+        <Hamburger isOpen={hamburgerOpen} />
+      </div>
       <ul className="nav-links">
         {isLoggedIn ? (
           <>
@@ -39,8 +49,9 @@ const Header = ({ query, setQuery }) => {
             <Link to="/AddAnswer">
               <li>Add Answer</li>
             </Link>
-            <h2>{user && user.username}</h2>
-            <Link onClick={logOut}>Logout</Link>
+            <Link onClick={logOut}>
+              <li>Logout</li>
+            </Link>
           </>
         ) : (
           <>
@@ -51,12 +62,13 @@ const Header = ({ query, setQuery }) => {
           </>
         )}
       </ul>
-      {/* {localStorage.getItem("users") ? (
-        <>
-          <p>{user && user.username}</p>
-          <Link onClick={logOut}>Logout</Link>
-        </>
-      ) : null} */}
+      <style jsx>{`
+        @media only screen and (max-width: 480px) {
+          .nav-links {
+            display: ${hamburgerOpen ? "inline" : "none"};
+          }
+        }
+      `}</style>
     </div>
   );
 };

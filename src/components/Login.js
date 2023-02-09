@@ -18,16 +18,10 @@ const Login = () => {
     );
     if (user) {
       localStorage.setItem("loggedIn", true);
-      //   window.location.href = "/";
       history.push("/");
     } else {
       setError("Invalid username or password");
     }
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("loggedIn");
-    setIsLoggedIn(false);
   };
 
   return (

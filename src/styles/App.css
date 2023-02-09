@@ -1,6 +1,11 @@
 * {
-    margin: 0;   
    
+    box-sizing: border-box;  
+   
+}
+html, body{
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -18,11 +23,11 @@ button {
     display: flex;
     justify-content: space-evenly;
     margin: auto;
-    align-items: center;
-    margin-top: 50px;
-    width: 70%;
-    height: 50px;
-    margin-bottom: 50px;
+    align-items: center;   
+    width: 100%;
+    height: 100px;  
+    box-shadow: 0px 5px 8px -8px rgba(14, 13, 13, 0.5);
+    background-color: white;
 }
 #header img{
     width: 10%;
@@ -31,10 +36,10 @@ button {
 }
 
 .mainPage {
-
-    background-color: gray;
+    background-color: rgb(224, 217, 217);
     margin-top: 60px;
-    width: 70%;
+    width: 100%;
+    height: 100vh;
     display: flex;
     margin: auto;
     justify-content: space-around;
@@ -45,15 +50,17 @@ button {
 .questionAnswerCard {
     background-color: white;
     width: 42%;
-    padding: 20px;
+    padding: 40px;
     text-align: left;
+    box-shadow: 0px 5px 8px -8px rgba(14, 13, 13, 0.5);
 }
 
 .questionPage {
     background-color: white;
     width: 42%;
-    padding: 20px;
+    padding: 40px;
     text-align: left;
+    box-shadow: 0px 5px 8px -8px rgba(14, 13, 13, 0.5);
 }
 
 #searchResult {
@@ -100,27 +107,29 @@ button {
 }
 .nav-links {
     width: 40%;
-    display: flex;
+    display: flex;   
     justify-content: space-around;
     align-items: center;
     list-style: none;
     font-size: 15px;
     font-family: sans-serif;
+    
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    
 }
 
 .routes {
     text-align: center;
-
 }
 
 .linkpage {
     margin: 60px;
     background-color: rgb(188, 190, 192);
-    width: 50%;
-    margin: auto;
-    margin-top: 60px;
-    /* padding-top: 20px; */
-    text-align: right;
+    width: 100%;
+    margin: auto;      
+    height: 100vh;
 }
 
 .linkpage select {
@@ -128,28 +137,37 @@ button {
 }
 
 .linkpage input {
-    margin-top: 20px;
-    height: 25px;
-    width: 200px;
+    margin-top: 30px;
+    height: 30px;
+    width: 300px;   
 
 }
 
 .inputs {
-    width: 200px;
+    width: 300px;
     margin: 20px;
-    padding: 10px;
+    padding: 10px;    
 }
 
 .addquestion {
     display: flex;
     justify-content: space-evenly;
-    margin: 8px;
+    flex-direction: column;
+ padding-top: 50px;
     align-items: center;
+    font-size: 20px;
+    padding-top: 70px;
+    
+}
+.question-container{
+    display: flex;
 }
 
 .addAnswer {
-    margin-right: 180px;
-    padding-top: 30px;
+    /* margin-right: 180px; */
+    padding-top: 70px;
+    text-align: center;
+    font-size: 20px;
 }
 
 .addAnswer button {
@@ -158,27 +176,33 @@ button {
 
 #buttoncontainer {
     display: flex;
-    justify-content: right;
+    justify-content: center;
 
 }
 
 .login-page {
-    padding: 0px;
-    margin-right: 220px;
+    /* padding: 0px; */
+    padding-top: 70px;
+  
 }
 
 #register {
 
     padding-bottom: 30px;
-    margin-right: 10px;
+   
 }
 
 .login-page button {
     margin-right: 0px;
 }
 
-.register-page {
-    margin-right: 150px;
+.register-page { 
+   
+    display: flex;  
+    flex-direction: column;
+    text-align: center;
+    padding-top: 70px;
+
 }
 
 .card{
@@ -191,35 +215,143 @@ button {
     font-weight: 600;
 }
 
+/* changes added from here */
+.hamburger{    
+    display: none;    
+}
+.burger{
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    background-color: black;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+}
+
+
 @media only screen and (max-width:700px)  {
-    .nav-links {
-        width: 40%;    
+    .nav-links {                
+        width: 100%;      
+        color: black;  
+        background-color: white; 
         list-style: none;
-        font-size: 8px;
-        padding-left: 0px;
-        
+        font-size: 20px;
+        padding-left: 0px;        
+    }   
+    .nav-links li{
+        height: 20px;
+        border-bottom: 1px black;
+        width: 100%;
     }
     #header {        
-        margin: auto;
-        align-items: center;
-        margin-top: 20px;
-        width: 90%;
-        height: 20px;
-        margin-bottom: 20px;
-        
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;  
+        height: 200px;         
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    
+    #header img{
+        width: 100px;
+        height: auto;
+       margin: 15px;
     }
     #search {
-        width: 70%;
-        height: 20px;
-        border-radius: 10px;
-        background-color: white;
-        border: 1px solid rgb(155, 149, 149);
+        width: 100%;
+        height: 30px;
+        border-radius: 20px;
+        background-color:transparent;
+        border: none;
         margin: auto;
-        margin-left: 0px;
+        outline: none;
+        margin-left: 10px;
         padding-left: 10px; 
         
     }
-
-
+   
+    .search-input{        
+        width:70% ;
+        border: 1px solid grey;
+        padding-left: 10px;
+        border-radius: 10px;
+        margin-left: 15px;
+    }
+    .mainPage {    
+        width: 100%;  
+        height: 100%;            
+        padding: 40px;
+        display: flex;
+        flex-direction:column;
     
+    }
+    .questionAnswerCard {
+        background-color: white;
+        width: 95%;
+        margin: auto;
+        padding: 10px;
+        text-align: left;       
+        margin-bottom: 20px;
+    }
+    .questionPage{
+        background-color: white;
+        width: 95%;
+        margin: auto;
+        padding: 10px;
+        text-align: left;
+    }
+    .addquestion {       
+        flex-direction: column;        
+    }
+      
+}
+@media only screen and (max-width:480px){
+.nav-links{
+    /* overflow: hidden; */
+    background: #9e9898;     
+    width:100vw;
+    /* height: 200px; */
+    color:black;
+    font-size: 10px;    
+    flex-direction: column;
+    text-align: right;
+    margin: 0;
+    display: none;  
+    font-size: 20px;
+    height: 100vh;
+    overflow-y: scroll;
+  /* list-style: none;
+  position: fixed;  
+  top:0;
+  overflow: hidden;
+  max-width: 290px;
+  z-index: 9; */
+}
+.nav-links li{
+    padding: 5px;
+    border-bottom: 1px solid black;
+    height: 50px;
+    padding-right: 10px;
+   
+}
+.hamburger{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 10; 
+    position: relative;
+  left: 80px;
+    
+}  
+#header{
+    flex-direction: column;    
+   height: 240px;
+   padding-bottom: 0px;
+   width:100%;
+   text-align: center;
+}
+
+
 }

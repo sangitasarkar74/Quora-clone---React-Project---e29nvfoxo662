@@ -21,7 +21,7 @@ const Routes = () => {
             exact
             render={(props) => <MainPage {...props} query={query} />}
           />
-      
+
           <Route path="/AddQuestion" component={AddQuestion} />
           <Route path="/AddAnswer" component={AddAnswer} />
           <Route path="/Login" component={Login} />
