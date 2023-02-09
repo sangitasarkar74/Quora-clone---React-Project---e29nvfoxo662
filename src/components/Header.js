@@ -14,7 +14,7 @@ const Header = ({ query, setQuery }) => {
   };
 
   let user = JSON.parse(localStorage.getItem("users"));
-  console.log(user);
+  console.log("user", user);
 
   const history = useHistory();
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -35,7 +35,7 @@ const Header = ({ query, setQuery }) => {
         <Search setQuery={setQuery} query={query} />
       </div>
       <div className="hamburger" onClick={toggleHamburger}>
-        <Hamburger isOpen={hamburgerOpen} />
+        <Hamburger />
       </div>
       <ul className="nav-links">
         {isLoggedIn ? (
@@ -52,6 +52,7 @@ const Header = ({ query, setQuery }) => {
             <Link onClick={logOut}>
               <li>Logout</li>
             </Link>
+            <div>Welcome {user[0].username}!</div>
           </>
         ) : (
           <>

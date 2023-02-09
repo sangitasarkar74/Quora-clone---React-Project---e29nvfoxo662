@@ -6,6 +6,9 @@ import React, { useEffect, useState } from "react";
 const MainPage = ({ query }) => {
   const [questions, setQuestions] = useState([]);
 
+  let user = JSON.parse(localStorage.getItem("users"));
+  console.log("user", user);
+
   useEffect(() => {
     setQuestions(JSON.parse(localStorage.getItem("questions")) || []);
   }, []);

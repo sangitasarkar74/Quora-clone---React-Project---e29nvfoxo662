@@ -18,6 +18,7 @@ const Login = () => {
     );
     if (user) {
       localStorage.setItem("loggedIn", true);
+      // localStorage.setItem("user", JSON.stringify(user));
       history.push("/");
     } else {
       setError("Invalid username or password");
